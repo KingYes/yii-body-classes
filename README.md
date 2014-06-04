@@ -6,7 +6,7 @@ This behavior makes adding CSS body classes to your layouts quite simple
 
 Unpack release in the `protected/extensions/yii-body-classes` folder.
 
-Then add the behavior to a controller (or even better to your components/Controller.php):
+Then add the behavior to a controller (or even better to your `components/Controller.php`):
 
 ```
 public function behaviors() {
