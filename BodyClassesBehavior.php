@@ -29,6 +29,13 @@ class BodyClassesBehavior extends CBehavior {
 
 		$this->addBodyClasses( 'controller-' . Yii::app()->controller->id );
 		$this->addBodyClasses( 'action-' . Yii::app()->controller->action->id );
+		
+		if ( ! empty( Yii::app()->controller->layout ) ) {
+			$layout = Yii::app()->controller->layout;
+			$layout = ltrim( $layout, '/' );
+			$layout = str_replace( '/', '-', $layout );
+			$this->addBodyClasses( $layout );
+		}
 
 		if ( Yii::app()->user->isGuest )
 			$this->addBodyClasses( 'not-logged-in' );
